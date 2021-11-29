@@ -1,0 +1,105 @@
+/* Para button cursor:pointer */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    height: 100px; /*Ver tamaños*/
+    padding-left: 2rem ; /*Ver tamaños*/
+    padding-right: 2rem ; /*Ver tamaños*/
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+}
+
+/* Navegación desktop oculta */
+header div.desktop-navigation {
+    display: none;
+}
+
+main {
+    margin-top: 100px; /*Alto del header. Ver tamaños*/
+}
+
+main section {
+    margin-top: 4rem; /*aumentarlo en desktop*/
+}
+
+section.home, section.about-us, section.testimony div {
+    background-color: darkcyan; /*eliminar*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 2rem; /*aumentarlo en desktop*/
+}
+
+div.illustration-intro {
+    width: 343px; /*aumentarlo en desktop*/
+    height: 310px; /*aumentarlo en desktop*/
+    background-image: url('../img/illustration-intro.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
+    width: 375px;/*aumentarlo en desktop*/
+    padding-left: 1rem ; /*Ver tamaños*/
+    padding-right: 1rem ; /*Ver tamaños*/
+}
+
+h1 {
+    color: rgb(35, 44, 81);
+    font-weight: 700;
+    font-size: 2.95rem;
+    line-height: 3.1rem;
+    letter-spacing: -0.25rem;
+    text-align: left;
+}
+
+/* texto debajo h1 */
+
+/*Botón Get-Started*/
+.button-get-started {
+    background-color: rgb(242, 95, 58);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 500;
+    font-size: 0.824rem;
+    line-height: 1.204px;
+    text-align: center;
+    width: 134px;
+    height: 44px;
+    padding: 12.5px 30.5px;
+    box-shadow: 0px 4px 8px rgba(242, 97, 59, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.button-get-started:hover {
+    background-color: rgba(242, 95, 58, 0.6);
+}
+
+section.simplify .button-get-started {
+    background-color: #FFFFFF;
+    color: rgb(242, 95, 58);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+section.simplify .button-get-started:hover {
+    color: rgba(242, 95, 58, 0.6);
+}
