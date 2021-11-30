@@ -1,5 +1,5 @@
 /* Para button cursor:pointer */
-* {
+*, ::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,13 +8,14 @@
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 16px;
+    counter-reset: cuenta-lista; /*Inicia contador*/
 }
 
 header {
     width: 100%;
     height: 100px; /*Ver tamaños*/
-    padding-left: 2rem ; /*Ver tamaños*/
-    padding-right: 2rem ; /*Ver tamaños*/
+    padding-left: 11.45vw; /*Relativo al viewport para que ajuste automático al aumentar ancho */
+    padding-right: 11.45vw;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -23,6 +24,7 @@ header {
     flex-wrap: wrap;
     position: fixed;
     top: 0;
+    z-index: 10;
 }
 
 /* Navegación desktop oculta */
@@ -35,43 +37,57 @@ main {
 }
 
 main section {
-    margin-top: 4rem; /*aumentarlo en desktop*/
+    margin-top: 5rem; /*--aumentarlo en desktop*/
 }
 
-section.home, section.about-us, section.testimony div {
-    background-color: darkcyan; /*eliminar*/
+/* Flex Secciones principales */
+section.home, section.about-us, section.testimony div, section.simplify {
+    /* background-color: darkcyan; eliminar */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    gap: 2rem; /*aumentarlo en desktop*/
+    gap: 2rem; /*--aumentarlo en desktop*/
 }
 
+.item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
+    width: 375px;/*--aumentarlo en desktop*/
+    padding-left: 1rem ; /*Ver tamaños*/
+    padding-right: 1rem ; /*Ver tamaños*/
+    text-align: center; /*--left en desktop, no todos*/
+}
+
+/* Declaraciones generales */
+h1, h2, h3, dt {
+    color: rgb(35, 44, 81);
+    font-weight: 700;
+}
+
+p, dd {
+    color: rgb(143, 148, 167);
+    font-weight: 500;
+    line-height: 1.625rem;
+}
+
+/* Sección HOME */
 div.illustration-intro {
-    width: 343px; /*aumentarlo en desktop*/
-    height: 310px; /*aumentarlo en desktop*/
+    width: 343px; /*--Ancho mobile-2rem Aumentarlo en desktop a 540px*/
+    height: 310px; /*--Mantener proporción de imagen original. (345/540*485) aumentarlo en desktop a 485px*/
     background-image: url('../img/illustration-intro.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
-    width: 375px;/*aumentarlo en desktop*/
-    padding-left: 1rem ; /*Ver tamaños*/
-    padding-right: 1rem ; /*Ver tamaños*/
-}
-
 h1 {
-    color: rgb(35, 44, 81);
-    font-weight: 700;
     font-size: 2.95rem;
     line-height: 3.1rem;
-    letter-spacing: -0.25rem;
-    text-align: left;
+    letter-spacing: -0.25rem; 
 }
 
-/* texto debajo h1 */
+section.home p, section.about-us p {
+    padding: 1.75rem 0.5rem;
+}
 
 /*Botón Get-Started*/
 .button-get-started {
@@ -94,6 +110,75 @@ h1 {
     background-color: rgba(242, 95, 58, 0.6);
 }
 
+/* Sección ABOUT US */
+section.about-us h2 {
+    font-size: 2.25rem;
+    line-height: 2.56rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Numeración Lista */
+section.about-us dt::before {
+    display: inline-block; /*Para darle propiedades de caja. Por defecto es inline*/
+    content: counter(cuenta-lista, decimal-leading-zero); /*Contador con 0 delante*/
+    counter-increment: cuenta-lista;
+    height: 43px;
+    width: 69px;
+    background-color: rgb(242, 95, 58); /*--Eliminar en desktop */
+    border-radius: 50px;
+    margin-right: 10px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    position: relative; /*Para que conserve lugar de caja*/
+    top: 0px; /*--En desktop agregar left: -69px + margen. Ver como alinear texto */
+}
+
+section.about-us dt {
+    height: 43px;
+    padding-top: -13.5px;
+    text-align: left;
+    letter-spacing: -0.02rem;
+    background-color: rgb(255, 239, 234);
+    border-radius: 50px 0px 0px 50px;
+}
+
+section.about-us dd {
+padding-top: 4.5px;
+margin-bottom: 33.5px;
+letter-spacing: -0.01rem;
+text-align: left;
+}
+
+/* Sección TESTIMONY */
+div.avatar-background {
+    position: relative; /*Necesario para imagen position: absolute*/
+    height: 35px;
+}
+
+img.avatar {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -35px;
+    text-align: center;
+}
+
+div.testimony-container {
+    height: 219px;
+    background-color: rgb(249, 249, 249);
+}
+
+div.testimony-container h3 {
+    /* padding: 21px; */
+}
+
+/* Sección SIMPLIFY */
+section.simplify p {
+    color: #FFFFFF;
+}
+
 section.simplify .button-get-started {
     background-color: #FFFFFF;
     color: rgb(242, 95, 58);
@@ -102,4 +187,9 @@ section.simplify .button-get-started {
 
 section.simplify .button-get-started:hover {
     color: rgba(242, 95, 58, 0.6);
+}
+
+/*----RESPONSIVE----*/
+@media screen and (min-width: 375px) {
+    
 }
