@@ -41,7 +41,7 @@ main section {
 }
 
 /* Flex Secciones principales */
-section.home, section.about-us, section.testimony div, section.simplify {
+section.home, section.about-us, div.flex-testimony, section.simplify {
     /* background-color: darkcyan; eliminar */
     display: flex;
     flex-direction: row;
@@ -58,7 +58,7 @@ section.home, section.about-us, section.testimony div, section.simplify {
     text-align: center; /*--left en desktop, no todos*/
 }
 
-/* Declaraciones generales */
+/* Propiedades generales */
 h1, h2, h3, dt {
     color: rgb(35, 44, 81);
     font-weight: 700;
@@ -94,7 +94,7 @@ section.home p, section.about-us p {
     background-color: rgb(242, 95, 58);
     color: #FFFFFF;
     border: none;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 0.824rem;
     line-height: 1.204px;
     text-align: center;
@@ -104,6 +104,7 @@ section.home p, section.about-us p {
     box-shadow: 0px 4px 8px rgba(242, 97, 59, 0.5);
     border-radius: 50px;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 
 .button-get-started:hover {
@@ -124,7 +125,7 @@ section.about-us dt::before {
     counter-increment: cuenta-lista;
     height: 43px;
     width: 69px;
-    background-color: rgb(242, 95, 58); /*--Eliminar en desktop */
+    background-color: rgb(242, 95, 58); /*--en desktop poner blanco */
     border-radius: 50px;
     margin-right: 10px;
     color: #FFFFFF;
@@ -145,13 +146,21 @@ section.about-us dt {
 }
 
 section.about-us dd {
-padding-top: 4.5px;
-margin-bottom: 33.5px;
-letter-spacing: -0.01rem;
+padding-top: 0.8rem;
+margin-bottom: 2.09rem;
+letter-spacing: -0.02rem;
 text-align: left;
 }
 
 /* Sección TESTIMONY */
+section.testimony h2 {
+    font-size: 2.45rem;
+    line-height: 3.81rem;
+    letter-spacing: -0.01rem;
+    text-align: center;
+    margin-bottom: 74px;
+}
+
 div.avatar-background {
     position: relative; /*Necesario para imagen position: absolute*/
     height: 35px;
@@ -161,28 +170,56 @@ img.avatar {
     width: 70px;
     height: 70px;
     position: absolute;
-    bottom: -35px;
-    text-align: center;
+    bottom: -35px; /*50% alto foto*/
+    left: calc(50% - 35px); /*50% ancho contenedor - 50% ancho foto*/
 }
 
 div.testimony-container {
-    height: 219px;
+    height: 230px;
     background-color: rgb(249, 249, 249);
 }
 
 div.testimony-container h3 {
-    /* padding: 21px; */
+    line-height: 1.39rem;
+    letter-spacing: -0.01rem;
+    padding-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+div.testimony-container p {
+padding-left: 1rem;
+padding-right: 1rem;
+line-height: 1.566rem;
+}
+
+section.testimony div:nth-child(3) {
+    text-align: center;
+    margin-top: 2.8125rem;
+    margin-bottom: 2.8125rem; /*--en desktop 11.25rem*/
 }
 
 /* Sección SIMPLIFY */
+section.simplify {
+    background-color:  rgb(242, 95, 58);
+    background-image: url('../img/bg-simplify-section-mobile.svg'); /*--desktop cambiar imagen*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 400px;/*--desktop 224px*/
+}
+
 section.simplify p {
     color: #FFFFFF;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.005rem;
 }
 
 section.simplify .button-get-started {
     background-color: #FFFFFF;
     color: rgb(242, 95, 58);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    transition: color 0.5s;
 }
 
 section.simplify .button-get-started:hover {
@@ -190,6 +227,6 @@ section.simplify .button-get-started:hover {
 }
 
 /*----RESPONSIVE----*/
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 376px) {
     
 }
