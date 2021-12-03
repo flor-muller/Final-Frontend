@@ -202,7 +202,7 @@ section.simplify {
     background-color:  rgb(242, 95, 58);
     background-image: url('../img/bg-simplify-section-mobile.svg'); /*--desktop cambiar imagen*/
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; /*--desktop cover */
     height: 380px;/*--desktop 224px*/
 }
 
@@ -269,7 +269,7 @@ input[type=email]:invalid {
 
 /* Flex Lista Enlaces Footer */
 div.footer-list-flex {
-    width: 70vw; /*--modificar ancho para desktop */
+    width: 70vw; /*--desktop 27vw*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -304,7 +304,7 @@ div.footer-social-flex {
 
 /* Flex Redes Sociales */
 div.social-media {
-    width: 100vw; /*--Reducir tamaño para desktop */
+    width: 100vw; /*--desktop 12vw*/
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -329,18 +329,13 @@ div.social-media i:hover {
 
 /* Copyright */
 footer div p {
-    text-align: center;
+    text-align: center; /*-- desktop right */
     font-size: 0.78rem;
     line-height: 1.125px;
 }
 
 /*----RESPONSIVE----*/
 @media screen and (min-width: 376px) {
-    
-    body {
-        max-width: 1440px;
-    }
-
     /* Encabezado */ 
     /* Navegación mobile oculta */
     nav.mobile-navigation {
@@ -361,7 +356,6 @@ footer div p {
         flex: wrap;
     }
 
-
     nav.desktop-navigation li a {
         text-align: left;
         text-decoration: none;
@@ -381,13 +375,12 @@ footer div p {
     }
 
     /* Flex Secciones principales y Footer principal */
-    section.home, section.about-us, section.simplify  {
+    section.home, section.about-us, section.simplify, div.footer-principal-flex {
         justify-content: space-between;
-        gap: 0; /* revisar */
+        /* gap: 0; revisar */
         padding-left: 11.45vw; /*revisar */
         padding-right: 11.45vw; /*revisar*/
     }
-    /*div.footer-principal-flex*/
     
     .item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
         width: 439px;
@@ -445,10 +438,43 @@ footer div p {
     section.simplify {
         background-image: url('../img/bg-simplify-section-desktop.svg');
         height: 224px;
+        background-position: right;
+        background-size: cover;
     }
 
     section.simplify p {
         font-size: 2.3rem;
+    }
+
+    /*FOOTER*/
+    /* Flex Principal (cambio orden) */
+    div.footer-principal-flex form {
+        order: 1;
+    }
+    div.footer-social-flex {
+        order: -1;
+    }
+
+    /* Flex Lista Enlaces Footer */
+    div.footer-list-flex {
+        width: 27vw;
+    }
+
+    /* Flex Redes Sociales */
+    div.social-media {
+        width: 12vw;
+        order: 1;
+    }
+
+    /* Íconos redes sociales */
+    div.social-media i {
+        font-size: 20px;
+    }
+
+    /* Copyright */
+    footer div p {
+        text-align: right;
+        padding-right: 11.45vw;
     }
 
 }
