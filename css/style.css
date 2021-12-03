@@ -1,4 +1,3 @@
-/* Para button cursor:pointer */
 *, ::before {
     margin: 0;
     padding: 0;
@@ -41,7 +40,7 @@ main section {
     margin-top: 5rem; /*--aumentarlo en desktop*/
 }
 
-/* Flex Secciones principales */
+/* Flex Secciones principales y Footer principal */
 section.home, section.about-us, div.flex-testimony, section.simplify, div.footer-principal-flex {
     display: flex;
     flex-direction: row;
@@ -243,6 +242,7 @@ input[type=email] {
     width: 201px;
     height: 42px;
     padding-left: 1rem;
+    transition: all 0.2s;
 }
 
 input[type=submit] {
@@ -259,17 +259,25 @@ input[type=submit]:hover {
     background-color: rgb(245, 134, 106);
 }
 
-/* Flex Navegación Footer */
-nav.footer-navigation {
-    /* width: 100%; --ver como hacerlo para desktop */
+input[type=email]:focus {
+    outline: solid 2px #007bff;;
+}
+
+input[type=email]:invalid {
+    outline: solid 2px rgb(242, 95, 58);
+}
+
+/* Flex Lista Enlaces Footer */
+div.footer-list-flex {
+    width: 70vw; /*--modificar ancho para desktop */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 100px;
+    /* gap: 100px; */
 }
 
-nav.footer-navigation li a {
+div.footer-list-flex li a {
     display:inline-block;
     text-align: left;
     text-decoration: none;
@@ -281,33 +289,32 @@ nav.footer-navigation li a {
     transition: color 0.5s;
 }
 
-nav.footer-navigation li a:hover {
+div.footer-list-flex li a:hover {
     color:rgb(242, 95, 58);
 }
 
-/* Flex Secundario Footer */
-div.footer-secondary-flex {
+/* Flex Redes Sociales y Logo Footer */
+div.footer-social-flex {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     gap: 4.17rem;
 }
 
 /* Flex Redes Sociales */
 div.social-media {
-    /* width: 100vw; --ver como hacerlo para desktop */
+    width: 100vw; /*--Reducir tamaño para desktop */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2.5rem;
-
+    /* gap: 2.5rem; */
 }
 
 div.social-media i {
     color:#FFFFFF;
-    font-size: 20px;
+    font-size: 30px; /*--20 px para desktop */
     transition: color 0.5s;
 }
 
@@ -320,6 +327,7 @@ div.social-media i:hover {
     margin-bottom: 3rem;
 }
 
+/* Copyright */
 footer div p {
     text-align: center;
     font-size: 0.78rem;
@@ -327,6 +335,6 @@ footer div p {
 }
 
 /*----RESPONSIVE----*/
-@media screen and (min-width: 376px) {
+/*@media screen and (min-width: 376px) {
     
-}
+}*/
