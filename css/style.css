@@ -50,10 +50,10 @@ section.home, section.about-us, div.flex-testimony, section.simplify, div.footer
     gap: 2rem; /*--aumentarlo en desktop*/
 }
 
-.item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
+.item-flex, .item-flex-2 {
     width: 375px;/*--aumentarlo en desktop*/
-    padding-left: 1rem; /*Ver tamaños*/
-    padding-right: 1rem; /*Ver tamaños*/
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: center; /*--left en desktop, no todos*/
 }
 
@@ -71,8 +71,8 @@ p, dd {
 
 /* Sección HOME */
 div.illustration-intro {
-    width: 343px; /*--Ancho mobile-2rem Aumentarlo en desktop a 540px*/
-    height: 310px; /*--Mantener proporción de imagen original. (345/540*485) aumentarlo en desktop a 485px*/
+    width: 343px; /*--Mobile: 375px - 2rem. En desktop 540px*/
+    height: 310px; /*--Mantener proporción de imagen original (345/540*485). En desktop 485px*/
     background-image: url('../img/illustration-intro.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -85,7 +85,7 @@ h1 {
 }
 
 section.home p, section.about-us p {
-    padding: 1.75rem 0.5rem; /* --Aumentar padding-right y eliminar padding-left en desktop */
+    padding: 1.75rem 0.5rem; /* --En desktop aumentar padding-right y eliminar padding-left */
 }
 
 /*Botón Get-Started*/
@@ -140,7 +140,7 @@ section.about-us dt {
     padding-top: -13.5px;
     text-align: left; /*--En desktop agregar margin-left. */
     letter-spacing: -0.02rem;
-    background-color: rgb(255, 239, 234); /*--en desktop poner blanco */
+    background-color: rgb(255, 239, 234); /*--En desktop poner blanco */
     border-radius: 50px 0px 0px 50px;
 }
 
@@ -174,7 +174,7 @@ img.avatar {
 }
 
 div.testimony-container {
-    height: 230px; /* --en desktop height 219px y aumentar width a 445px */
+    height: 230px; /* --En desktop height 219px y aumentar width a 445px */
     background-color: rgb(249, 249, 249);
 }
 
@@ -194,7 +194,7 @@ line-height: 1.566rem;
 section.testimony div:nth-child(3) {
     text-align: center;
     margin-top: 2.8125rem;
-    margin-bottom: 2.8125rem; /*--en desktop 11.25rem*/
+    margin-bottom: 2.8125rem; /*--En desktop 11.25rem*/
 }
 
 /* Sección SIMPLIFY */
@@ -274,7 +274,6 @@ div.footer-list-flex {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    /* gap: 100px; */
 }
 
 div.footer-list-flex li a {
@@ -286,7 +285,7 @@ div.footer-list-flex li a {
     line-height: 1.44rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    transition: color 0.5s;
+    transition: all 0.5s;
 }
 
 div.footer-list-flex li a:hover {
@@ -309,12 +308,11 @@ div.social-media {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    /* gap: 2.5rem; */
 }
 
 div.social-media i {
     color:#FFFFFF;
-    font-size: 30px; /*--20 px para desktop */
+    font-size: 30px; /*--desktop 20 px */
     transition: color 0.5s;
 }
 
@@ -363,12 +361,21 @@ footer div p {
         font-weight: 500;
         font-size: 0.81rem;
         line-height: 1.44rem;
-        transition: color 0.5s;
+        transition: all 0.5s;
     }
     
+    nav.desktop-navigation li a:visited {
+        color:rgb(14, 116, 94);
+    }
+
     nav.desktop-navigation li a:hover {
         color:rgb(143, 148, 167);
     }
+
+    nav.desktop-navigation li a:active {
+        color:rgb(242, 95, 58);
+    }
+
     /* Main */
     main section {
         margin-top: 8rem;
@@ -377,12 +384,11 @@ footer div p {
     /* Flex Secciones principales y Footer principal */
     section.home, section.about-us, section.simplify, div.footer-principal-flex {
         justify-content: space-between;
-        /* gap: 0; revisar */
-        padding-left: 11.45vw; /*revisar */
-        padding-right: 11.45vw; /*revisar*/
+        padding-left: 11.45vw; 
+        padding-right: 11.45vw;
     }
     
-    .item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
+    .item-flex, .item-flex-2 {
         width: 439px;
         text-align: left;
         padding: 0;
@@ -392,7 +398,7 @@ footer div p {
         text-align: center;
     }
 
-    section.simplify div.item-2 {
+    section.simplify div.item-flex-2 {
         text-align: right;
     }
 
@@ -416,7 +422,7 @@ footer div p {
     /* Sección ABOUT US */
     /* Numeración Lista */
     section.about-us dt::before {
-        margin-right: 23px; /* Separación boton-texto de Figma */
+        margin-right: 23px; /* Separación boton a texto de Figma */
     }
 
     section.about-us dt {
@@ -447,7 +453,7 @@ footer div p {
     }
 
     /*FOOTER*/
-    /* Flex Principal (cambio orden) */
+    /* Flex Principal (cambio de orden) */
     div.footer-principal-flex form {
         order: 1;
     }
