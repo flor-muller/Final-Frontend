@@ -43,7 +43,7 @@ main section {
 /* Flex Secciones principales y Footer principal */
 section.home, section.about-us, div.flex-testimony, section.simplify, div.footer-principal-flex {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /*row + wrap para cuando se agrende la pantalla. Para mobile al tener el ancho de la screen, se ve como column */
     justify-content: center; /* --space-between en desktop */
     align-content: center;
     flex-wrap: wrap;
@@ -103,7 +103,7 @@ section.home p, section.about-us p {
     box-shadow: 0px 4px 8px rgba(242, 97, 59, 0.5);
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s ease;
 }
 
 .button-get-started:hover {
@@ -218,7 +218,7 @@ section.simplify .button-get-started {
     background-color: #FFFFFF;
     color: rgb(242, 95, 58);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    transition: color 0.5s;
+    transition: color 0.5s ease;
 }
 
 section.simplify .button-get-started:hover {
@@ -242,7 +242,7 @@ input[type=email] {
     width: 201px;
     height: 42px;
     padding-left: 1rem;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 input[type=submit] {
@@ -252,7 +252,7 @@ input[type=submit] {
     height: 42px;
     background-color: rgb(242, 95, 58);
     margin-left: 0.5rem;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s ease;
 }
 
 input[type=submit]:hover {
@@ -285,7 +285,7 @@ div.footer-list-flex li a {
     line-height: 1.44rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
 }
 
 div.footer-list-flex li a:hover {
@@ -313,7 +313,7 @@ div.social-media {
 div.social-media i {
     color:#FFFFFF;
     font-size: 30px; /*--desktop 20 px */
-    transition: color 0.5s;
+    transition: color 0.5s ease;
 }
 
 div.social-media i:hover {
@@ -361,7 +361,7 @@ footer div p {
         font-weight: 500;
         font-size: 0.81rem;
         line-height: 1.44rem;
-        transition: all 0.5s;
+        transition: all 0.5s ease;
     }
     
     nav.desktop-navigation li a:visited {
