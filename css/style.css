@@ -6,14 +6,14 @@
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     counter-reset: cuenta-lista; /*Inicia contador*/
 }
 
 /* Encabezado */
 header {
     width: 100%;
-    height: 100px; /*Ver tamaños*/
+    height: 100px;
     padding-left: 11.45vw; /*Relativo al viewport para que ajuste automático al aumentar ancho */
     padding-right: 11.45vw;
     background-color: #FFFFFF;
@@ -28,12 +28,12 @@ header {
 }
 
 /* Navegación desktop oculta */
-header div.desktop-navigation {
+header nav.desktop-navigation, header button {
     display: none;
 }
 
 main {
-    margin-top: 100px; /*Alto del header. Ver tamaños*/
+    margin-top: 100px; /*Alto del header*/
 }
 
 main section {
@@ -335,6 +335,69 @@ footer div p {
 }
 
 /*----RESPONSIVE----*/
-/*@media screen and (min-width: 376px) {
+@media screen and (min-width: 376px) {
+    /* Encabezado */ 
+    /* Navegación mobile oculta */
+    nav.mobile-navigation {
+        display: none;
+    }
+
+    /*  Navegación + Logo */
+    header nav.desktop-navigation, header button {
+        display: block;
+    }
+    /* Encabezado: Flex Navegación */
+    nav.desktop-navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.75rem;
+        flex: wrap;
+    }
+
+
+    nav.desktop-navigation li a {
+        text-align: left;
+        text-decoration: none;
+        color: rgb(35, 44, 81);
+        font-weight: 500;
+        font-size: 0.81rem;
+        line-height: 1.44rem;
+        transition: color 0.5s;
+    }
     
-}*/
+    nav.desktop-navigation li a:hover {
+        color:rgb(143, 148, 167);
+    }
+    /* Main */
+    main section {
+        margin-top: 8rem;
+    }
+
+    /* Flex Secciones principales y Footer principal */
+    section.home, section.about-us, div.flex-testimony, section.simplify, div.footer-principal-flex {
+        gap: 7.8rem; /* Ver si aplica a footer */
+    }
+    
+    .item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
+        width: 439px;
+        text-align: left;
+    }
+
+    section.testimony article {
+        text-align: center;
+    }
+
+    /* Sección HOME */
+    div.illustration-intro {
+        width: 540px;
+        height: 485px;
+        order: 1;
+    }
+
+    section.home p, section.about-us p {
+        padding-right: 3rem;
+    }
+
+}
