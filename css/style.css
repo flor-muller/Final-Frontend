@@ -381,11 +381,13 @@ footer div p {
     }
 
     /* Flex Secciones principales y Footer principal */
-    section.home, section.about-us, section.simplify, div.footer-principal-flex {
+    section.home, section.about-us, section.simplify  {
         justify-content: space-between;
-        padding-left: 11.45vw; /* revisar */
-        padding-right: 11.45vw; /* revisar */
+        gap: 0; /* revisar */
+        padding-left: 11.45vw; /*revisar */
+        padding-right: 11.45vw; /*revisar*/
     }
+    /*div.footer-principal-flex*/
     
     .item-1, .item-2, .item-3 { /* Si no uso por separado item, reducirlo a una clase */
         width: 439px;
@@ -395,6 +397,10 @@ footer div p {
 
     section.testimony article {
         text-align: center;
+    }
+
+    section.simplify div.item-2 {
+        text-align: right;
     }
 
     /* Sección HOME */
@@ -439,6 +445,10 @@ footer div p {
     section.simplify {
         background-image: url('../img/bg-simplify-section-desktop.svg');
         height: 224px;
+    }
+
+    section.simplify p {
+        font-size: 2.3rem;
     }
 
 }
